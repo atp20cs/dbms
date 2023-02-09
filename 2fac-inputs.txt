@@ -1,0 +1,74 @@
+insert into Faculty values(&facultycode,'&facultyname')
+105 Jayakumar
+ 104 Sangeetha
+ 102 Bindu
+ 101 Silgy
+ 103 Vidhya
+ 
+ insert into Subject values('&subjectcode','&subjectname',&maxmark,&facultycode);
+ SUBJECTCODE SUBJECTNAME MAXMARK FACULTYCODE
+-------------------- ------------------------ ------------------- -----------------------
+503 DBMS 100 105
+501 Maths 150 101
+502 FSA 100 102
+504 OS 75 103
+505 DC 200 104
+508 DBMS lab 1001 103
+
+insert into Student values('&studentcode','&studentname','&dob','&studentbranch','&adate');
+insert into student values(2,’vaidehi’,’25-dec-88’,’me’,’1-jun-2000’);
+insert into student values(3,’varun’,’2-oct-88’,’me’,’2-jun-2000’);
+insert into student values(4,’turner’,’5-sep-88’,’ec’,’1-jun-2000’);
+insert into student values(5,’vani’,’20-jul-88’,’ee’,’5-jun-2000’);
+insert into student values(6,’binu’,’13-aug-88’,’me’,’10-jun-2000’);
+insert into student values(7,’chitra’,’14-nov-86’,’me’,’9-jun-1999’);
+insert into student values(8,’dona’,’2-dec-91’,’cs’,’2-jun-2000’);
+insert into student values(9,’elana’,’5-feb-90’,’cs’,’1-jun-2000’);
+insert into student values(10,’fahan’,’20-mar-88’,’ec’,’5-jun-2000’);
+insert into student values(11,’ginu’,’13-apr-88’,’ec’,’10-jun-2000’);
+insert into student values(12,’hamna’,’14-may-85’,’ee’,’9-jun-1999’);
+
+insert into M_mark values('&studentcode','&subjectcode',&mark);
+insert into M_mark values(1,501,40);
+insert into M_mark values(1,502,70);
+insert into M_mark values(1,503,50);
+insert into M_mark values(1,504,80);
+insert into M_mark values(1,505,40);
+insert into M_mark values(1,508,70);
+insert into M_mark values(2,501,90);
+insert into M_mark values(2,502,89);
+insert into M_mark values(2,503,77);
+insert into M_mark values(2,504,95);
+insert into M_mark values(2,505,74);
+insert into M_mark values(2,508,98);
+insert into M_mark values(3,501,40);
+insert into M_mark values(3,502,43);
+insert into M_mark values(3,503,40);
+insert into M_mark values(3,504,40);
+insert into M_mark values(3,505,40);
+insert into M_mark values(3,508,35);
+insert into M_mark values(4,501,50);
+insert into M_mark values(5,501,60);
+insert into M_mark values(6,501,67);
+insert into M_mark values(7,501,23);
+insert into M_mark values(8,501,43);
+insert into M_mark values(9,501,42);
+insert into M_mark values(10,505,74);
+insert into M_mark values(11,508,98);
+insert into M_mark values(12,501,40);
+insert into M_mark values(5,502,43);
+insert into M_mark values(6,503,40);
+insert into M_mark values(7,504,40);
+insert into M_mark values(8,505,40);
+insert into M_mark values(9,508,35);
+insert into M_mark values(10,501,50);
+insert into M_mark values(11,501,60);
+insert into M_mark values(12,503,67);
+insert into M_mark values(5,504,23);
+insert into M_mark values(6,504,23);
+insert into M_mark values(9,504,1);
+insert into M_mark values(10,504,1);
+insert into M_mark values(6,502,43);
+insert into M_mark values(7,505,42);
+
+ 

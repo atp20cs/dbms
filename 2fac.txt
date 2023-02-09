@@ -1,0 +1,52 @@
+Create Table Faculty (F_Code Number Primary Key, F_Name Varchar(15));
+
+create table Subject (subjectcode varchar(5) primary key not null,subjectname
+char(15),maxmark number(5,2),faculty_code int,foreign key(faculty_code) references
+Faculty(f_code));
+
+create table Student(studentcode varchar(5) primary key not null,studentname
+char(15),dob date,studentbranch char(3),adate date,check(studentbranch
+in('cs','ec','ee','me')));
+
+create table M_mark(studentcode varchar(5) references
+Student(studentcode),subjectcode varchar(5) references Subject(subjectcode),mark
+number(5,2),primary key(studentcode,subjectcode));
+
+a) Display the number of faculties.
+ select count(*) “No: of Faculties” from faculty;
+ 
+ b) Display the total mark for each student.
+ select studentname,sum(mark) “Total Mark” from M_mark,Student where
+ Student.studentcode= M_mark.studentcode group by studentname;
+ 
+c) Display the subject,average mark for each subject.
+select subjectname,round(avg(mark),2) “Average mark” from Subject,M_mark where
+Subject.subjectcode= M_mark.subjectcode group by subjectname;
+
+d) Display the name of subjects for which atleast one student got below 40%.
+select subject.subjectname,count(student1.studentname)”NO: OF STUDENTS” from
+subject,m_mark,student1 where student1.studentcode= m_mark.studentcode and
+m_mark.mark<(40* maxmark)/100 and subject.SubjectCode=m_mark.Subjectcode
+group by subject. Subjectname having count(distinct(m_mark.subjectcode))>=1;
+
+e) Display the name,subject and percentage of mark who got below 40 %.
+select studentname,
+subjectname,mark,maxmark,round((m_mark.mark/maxmark)*100,2)"Percentage"
+from subject, student1, m_mark where mark<(40*maxmark/100) and subject.
+SubjectCode = m_mark. subjectcode and student1.studentcode
+=m_mark.studentcode; 
+
+f) Display the faculties and alloted subjects for each faculty.
+select Faculty.f_name,Subject.subjectname from Faculty,Subject where
+Faculty.F_code=Subject.FACULTYCODE;
+
+g) Display the name of faculties who take more than one subject.
+Select f_name name from Faculty where (select count(subjectcode) from Subject
+where Subject.facultycode=Faculty.f_code)>1 group by Faculty.f_name;
+
+
+h) Display name,subject,mark, % of mark in ascending order of mark
+select studentname,subjectname,mark from Student1,Subject,M_mark where
+Student1.studentcode=M_mark.studentcode and Subject.subjectcode=
+M_mark.subjectcode order by mark;
+

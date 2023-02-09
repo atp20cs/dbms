@@ -1,0 +1,12 @@
+create table stu(stu_id int(10) primary key,stu_name varchar(20),mark float(20),subject varchar(10),max_mark float(20));
+
+
+insert into stu values(1,"pr",80,"Bio",100);
+insert into stu values(2,"afri",30,"Bio",100);
+
+select stu_id,mark from stu where mark>40 and stu.subject="Bio"  group by mark;
+
+
+update stu set mark=mark+5 WHERE mark<40 ;
+
+select stu_name from stu where mark=40 and stu.subject="PHY"  group by mark;

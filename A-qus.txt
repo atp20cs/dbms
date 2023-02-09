@@ -1,0 +1,16 @@
+create table dept(dept_id int primary key,dept_name varchar(20),manager_id int,manager_name varchar(20));
+
+input into dept values(1,"cse",1,"Shali");
+.....................
+
+create table emp(emp_no int primary key,emp_name varchar(20),salary float,desgn varchar(20),hiredate date,dept_id int references dept(dept_id));
+
+insert into emp values(1,"AA",10000,"HR",21-02-1998,1);
+
+select emp_name,hiredate from dept,Emp where emp.dept_id=Dept.dept_id;
+
+select emp_name,round( avg(salary),2) "AVG salary" from dept,emp where dept.dept_id=Emp.dept_id group by emp_name;
+
+select emp_name, desgn,count(*)"No:ofEMP," from emp  group by desgn;
+
+DELETE FROM EmpnWHERE emp_no =1;
